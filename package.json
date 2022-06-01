@@ -1,0 +1,24 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "Study App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swal0618/WebApp.git"
+  },
+  "keywords": [
+    "Studbud",
+    "Study",
+    "Buddy"
+  ],
+  "author": "Sebastian Walden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swal0618/WebApp/issues"
+  },
+  "homepage": "https://github.com/swal0618/WebApp#readme"
+}
