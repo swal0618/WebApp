@@ -9,18 +9,33 @@ body {
     background-color: palegoldenrod;
 }
 
-header {
+#webHead {
     background-color: palevioletred;
     padding: 3vh 0;
-    margin: 0px auto;
+    margin: 0 auto;
     text-align: center;
+    position:fixed;
+    top:0;
+    width:100%;
+    height: 4.5vh;
+    z-index: 2;
 }
+
+#webHead h1 {
+    font-size: 6vh;
+    margin-top: -1vh;
+}
+
+.content {
+    margin-top:10.5vh;
+  }
 
 .leftPanel {
     background-color: darksalmon;
     float:left;
     width: 22.5vw;
-    height: 90vh;
+    height: 100%;
+    margin-bottom: 80px;
 }
 
 #timerSection{
@@ -30,9 +45,9 @@ header {
     padding: 0.5vw 1.5vw;
     text-align:center;
     background : lightsalmon;
-  }
+}
   
-  #timer{ 
+#timer{ 
     color:white; 
     font-size:3.75vw; 
     margin:1vw auto;
@@ -47,23 +62,23 @@ header {
     -ms-user-select: none;
     user-select: none;
     cursor:default;
-  }
+}
   
-  #time{
+#time{
     margin-top:5vw;
     z-index : 1;
     position:relative;
-  }
+}
   
-  #filler{
+#filler{
     background : tomato;
     height: 0px;
     width: 200px;
     position:absolute;
     bottom:0;
-  }
+}
   
-  #buttons button { 
+#buttons button { 
     background:#4da6ff; 
     border:none; 
     color:#fff; 
@@ -74,20 +89,156 @@ header {
     font-size:0.9vw;
     height : 3.5vw;
     border-radius : 5vw;
-  }
+}
   
-  #buttons button#shortBreak{
+#buttons button#shortBreak{
     background : #0c0;
-  }
+}
   
-  #buttons button#longBreak{
+#buttons button#longBreak{
     background : #080;
-  }
+}
   
-  #buttons button#stop{
+#buttons button#stop{
     background : #f00;
+}
+
+.wrapper{
+    width: 17.5vw;
+    border-radius: 1vw;
+    background: lightsalmon;
+    margin:1vw auto;
+    padding: 0 1.5vw 3vw;
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
+.wrapper header{
+    padding: 3vh 0;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 500;
+    background-color: transparent;
+}
+.wrapper .search{
+    position: relative;
+    margin: 0 0 18px;
+}
+.search input{
+    height: 53px;
+    width: 95%;
+    outline: none;
+    font-size: 1.3vw;
+    padding-left: 1vw;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+.search input:focus{
+    border: 2px solid #4D59FB;
+}
+.search input::placeholder{
+    color: #B8B8B8;
+}
+.search :where(i, span){
+    position: absolute;
+    top: 50%;
+    color: #999;
+    transform: translateY(-50%);
+}
+.search i{
+    left: 18px;
+    pointer-events: none;
+    font-size: 16px;
+}
+.search input:focus ~ i{
+    color: #4D59FB;
+}
+.search span{
+    right: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    display: none;
+}
+.search input:valid ~ span{
+    display: block;
+}
+.wrapper .info-text{
+    font-size: 0.9vw;
+    color: #9A9A9A;
+    margin: -3px 0 -10px;
+}
+.wrapper.active .info-text{
+    display: none;
+}
+.info-text span{
+    font-weight: 500;
+}
+.wrapper ul{
+    height: 0;
+    opacity: 0;
+    padding-right: 1px;
+    overflow-y: hidden;
+    transition: all 0.2s ease;
+}
+.wrapper.active ul{
+    opacity: 1;
+    height: 303px;
+}
+.wrapper ul li{
+    display: flex;
+    list-style: none;
+    margin-bottom: 14px;
+    align-items: center;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #D9D9D9;
+    justify-content: space-between;
+}
+ul li:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+ul .word p{
+    font-size: 22px;
+    font-weight: 500;
+}
+ul .word span{
+    font-size: 12px;
+    color: #989898;
+}
+ul .word i{
+    color: #999;
+    font-size: 15px;
+    cursor: pointer;
   }
-  
+  ul .content{
+    max-height: 215px;
+    overflow-y: auto;
+  }
+  ul .content::-webkit-scrollbar{
+    width: 0px;
+  }
+  .content li .details{
+    padding-left: 10px;
+    border-radius: 4px 0 0 4px;
+    border-left: 3px solid #4D59FB;
+  }
+  .content li p{
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .content li span{
+    font-size: 15px;
+    color: #7E7E7E;
+  }
+  .content .synonyms .list{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .content .synonyms span{
+    cursor: pointer;
+    margin-right: 5px;
+    text-decoration: underline;
+  }  
 
 .taskformSection {
     border-radius :20px;
@@ -97,6 +248,32 @@ header {
     line-height: 3vh;
     text-align:center;
     background : lightsalmon;
+}
+
+#taskInput {
+    width:75%;
+}
+
+#dueDateInput {
+    width: 60%;
+}
+
+#completionTimeInput {
+    width:40%;
+}
+
+#estimatedTimeInput {
+    width: 72%;
+}
+
+#priorityInput {
+    width: 40%;
+}
+
+#taskSubmit {
+    width: 30%;
+    background-color: tomato;
+    color: white;
 }
 
 .rightPanel {
@@ -110,6 +287,7 @@ header {
     width: 40px;
     display:block;
     margin:1.5vh auto;
+    position:fixed;
 }
 
 .waterBar {

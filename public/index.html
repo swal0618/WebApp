@@ -12,11 +12,13 @@
 </head>
 <body>
   
-  <header>
+  <header id="webHead">
     <h1>studbud</h1>
   </header>
+  <div class = "content">
 
-  <div class="leftPanel">
+    <div class="leftPanel">
+
       <div id="timerSection">
         <div id="container">
           <div id="timer">
@@ -37,51 +39,89 @@
         </div>
       </div>
     
+      <div class="wrapper">
+        <header>Dictionary</header>
+        <div class="search">
+          <input type="text" placeholder="Search a word" required spellcheck="false">
+          <i class="fas fa-search"></i>
+          <span class="material-icons">close</span>
+        </div>
+        <p class="info-text">Type any existing word and press enter to get meaning, example, synonyms, etc.</p>
+        <ul>
+          <li class="word">
+            <div class="details">
+              <p>__</p>
+              <span>_ _</span>
+            </div>
+            <i class="fas fa-volume-up"></i>
+          </li>
+          <div class="content">
+            <li class="meaning">
+              <div class="details">
+                <p>Meaning</p>
+                <span>___</span>
+              </div>
+            </li>
+            <li class="example">
+              <div class="details">
+                <p>Example</p>
+                <span>___</span>
+              </div>
+            </li>
+            <li class="synonyms">
+              <div class="details">
+                <p>Synonyms</p>
+                <div class="list"></div>
+              </div>
+            </li>
+          </div>
+        </ul>
+      </div>  
 
-    <div class = "taskformSection">
-      <form id="taskform">
-        <label for="task">Task:</label>
-        <input type="text" name="task" id="taskInput">
+      <div class = "taskformSection">
+        <form id="taskform">
+          <label for="task">Task:</label>
+          <input type="text" name="task" id="taskInput">
+          <br>
+        <!-- Date input -->
+          <label for="dueDate">Due Date: </label>
+          <input type="date" name="dueDate" id="dueDateInput">
+          <br>
+        <!-- Time input -->
+        <label for="completionTime">Completion Time: </label>
+          <input type="time" name="completionTime" id="completionTimeInput">
+
+          <br>
+
+        <label for="estimatedTime">Estimated completion time (in mins):</label>
+        <input type="number" name="estimatedTime" id="estimatedTimeInput">
+        <!-- Priority -->
         <br>
-      <!-- Date input -->
-        <label for="dueDate">Due Date: </label>
-        <input type="date" name="dueDate" id="dueDateInput">
-        <br>
-      <!-- Time input -->
-      <label for="completionTime">Completion Time: </label>
-        <input type="time" name="completionTime" id="completionTimeInput">
+        <label for="priority">Task Priority:</label>
+        <select name="prority" id="priorityInput">
+          <option value="">Select one</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
 
         <br>
 
-      <label for="estimatedTime">Estimated completion time (in mins):</label>
-      <input type="number" name="estimatedTime" id="estimatedTimeInput">
-      <!-- Priority -->
-      <br>
-      <label for="priority">Task Priority:</label>
-      <select name="prority" id="priorityInput">
-        <option value="">Select one</option>
-        <option value="Low">Low</option>
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
-      </select>
+          <button type="submit" id="taskSubmit">Submit</button>
+        </form>
+        <ul id="tasklist">
+        </ul>
+        </div>
 
-      <br>
+    </div>
 
-        <button type="submit">Submit</button>
-      </form>
-      <ul id="tasklist">
-      </ul>
-      </div>
-
-  </div>
-
-  <div class="rightPanel">
-    <svg class = "waterContainer">
-      <rect class="waterBar" />
-      <rect id = "water" />
-    </svg>
-  </div>
-
+    <div class="rightPanel">
+      <svg class = "waterContainer">
+        <rect class="waterBar" />
+        <rect id = "water" />
+      </svg>
+    </div>
+  </div> 
   <div class="footer">
     <div class="spotifyPlayer">
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/471N195f5jAVs086lzYglw?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
