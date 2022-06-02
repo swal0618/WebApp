@@ -41,7 +41,7 @@ body {
 #timerSection{
     border-radius :20px;
     width:17.5vw;
-    margin:1vw auto;
+    margin:0.5vw auto 0.5vw;
     padding: 0.5vw 1.5vw;
     text-align:center;
     background : lightsalmon;
