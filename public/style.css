@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+    
+
+body {
+    font-family: sans-serif;
+    background-color: palegoldenrod;
+}
+
+header {
+    background-color: palevioletred;
+    padding: 3vh 0;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.leftPanel {
+    background-color: darksalmon;
+    float:left;
+    width: 22.5vw;
+    height: 90vh;
+}
+
+#timerSection{
+    border-radius :20px;
+    width:17.5vw;
+    margin:1vw auto;
+    padding: 0.5vw 1.5vw;
+    text-align:center;
+    background : lightsalmon;
+  }
+  
+  #timer{ 
+    color:white; 
+    font-size:3.75vw; 
+    margin:1vw auto;
+    border : 5px solid white;
+    border-radius:50%;
+    width:15vw;
+    height:15vw;
+    overflow:hidden;
+    position:relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:default;
+  }
+  
+  #time{
+    margin-top:5vw;
+    z-index : 1;
+    position:relative;
+  }
+  
+  #filler{
+    background : tomato;
+    height: 0px;
+    width: 200px;
+    position:absolute;
+    bottom:0;
+  }
+  
+  #buttons button { 
+    background:#4da6ff; 
+    border:none; 
+    color:#fff; 
+    cursor:pointer; 
+    padding:5px; 
+    width:6vw; 
+    margin:0.5vh auto;
+    font-size:0.9vw;
+    height : 3.5vw;
+    border-radius : 5vw;
+  }
+  
+  #buttons button#shortBreak{
+    background : #0c0;
+  }
+  
+  #buttons button#longBreak{
+    background : #080;
+  }
+  
+  #buttons button#stop{
+    background : #f00;
+  }
+  
+
+.taskformSection {
+    border-radius :20px;
+    width:17.5vw;
+    margin:1vw auto;
+    padding: 0.5vw 1.5vw;
+    line-height: 3vh;
+    text-align:center;
+    background : lightsalmon;
+}
+
+.rightPanel {
+    float:right;
+    width: 100px;
+    height: 90vh;
+}
+
+.waterContainer {
+    height: 75vh;
+    width: 40px;
+    display:block;
+    margin:1.5vh auto;
+}
+
+.waterBar {
+    height: 75vh;
+    width: 40px;
+    rx: 20px;
+    ry: 20px;
+    fill:whitesmoke;
+    opacity: 70%;
+}
+
+#water {
+    position:absolute;
+    bottom:0;
+    height: 60vh;
+    width: 40px;
+    rx: 20px;
+    ry: 20px;
+    fill:lightskyblue;
+    opacity: 80%;
+}
+
+.kanban {
+    height:80vh;
+    width:93vw;
+}
+
+.footer {
+    background-color: black;
+    display:block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height:80px;
+    width: 100%;
+}
+
