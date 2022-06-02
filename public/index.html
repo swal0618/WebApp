@@ -32,9 +32,10 @@
       
           <div id="buttons">
             <button id="work">Work</button>
+            <button id="stop">Stop</button>
             <button id="shortBreak">Short Break</button>
             <button id="longBreak">Long Break</button>
-            <button id="stop">Stop</button>
+            
           </div>
         </div>
       </div>
@@ -129,7 +130,7 @@
   </div>
 
   <div class="kanban">
-    <div class="container">
+    <div class="kanbanContainer">
         <div class="kanban-heading">
             <strong class="kanban-heading-text">Kanban Board</strong>
         </div>
@@ -138,24 +139,6 @@
                 <strong>To Do</strong>
                 <div class="task-button-block">
                     <button id="task-button" onclick="createTask()">Create new task</span>
-                </div>
-                <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
-                    <span>Task 1</span>
-                </div>
-                <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
-                    <span>Task 2</span>
-                </div>
-                <div class="task" id="task3" draggable="true" ondragstart="drag(event)">
-                    <span>Task 3</span>
-                </div>
-                <div class="task" id="task4" draggable="true" ondragstart="drag(event)">
-                    <span>Task 4</span>
-                </div>
-                <div class="task" id="task5" draggable="true" ondragstart="drag(event)">
-                    <span>Task 5</span>
-                </div>
-                <div class="task" id="task6" draggable="true" ondragstart="drag(event)">
-                    <span>Task 6</span>
                 </div>
             </div>
             <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -193,6 +176,73 @@
   </div>
 
   <script src="./script.js" type="module"></script>
+
+  <script>
+    function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.currentTarget.appendChild(document.getElementById(data));
+}
+
+function createTask() {
+  var x = document.getElementById("inprogress");
+  var y = document.getElementById("done");
+  var z = document.getElementById("create-new-task-block");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.style.display = "block";
+    z.style.display = "none";
+  } else {
+    x.style.display = "none";
+    y.style.display = "none";
+    z.style.display = "flex";
+  }
+}
+
+function saveTask() {
+  // var saveButton = document.getElementById("save-button");
+  // var editButton = document.getElementById("edit-button");
+  // if (saveButton.style.display === "none") {
+  //     saveButton.style.display = "block";
+  //     editButton.style.display = "none";
+  // } else{
+  //     saveButton.style.display = "none";
+  //     editButton.style.display = "block";
+  // }
+
+  var todo = document.getElementById("todo");
+  var taskName = document.getElementById("task-name").value;
+  todo.innerHTML += `
+            <div class="task" id="${taskName
+              .toLowerCase()
+              .split(" ")
+              .join("")}" draggable="true" ondragstart="drag(event)">
+                <span>${taskName}</span>
+            </div>
+            `;
+}
+
+function editTask() {
+  var saveButton = document.getElementById("save-button");
+  var editButton = document.getElementById("edit-button");
+  if (saveButton.style.display === "none") {
+    saveButton.style.display = "block";
+    editButton.style.display = "none";
+  } else {
+    saveButton.style.display = "none";
+    editButton.style.display = "block";
+  }
+}
+
+  </script>
 
 </body>
 </html>

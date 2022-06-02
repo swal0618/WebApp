@@ -6,7 +6,7 @@
 
 body {
     font-family: sans-serif;
-    background-color: palegoldenrod;
+    background-color: rgb(245, 233, 158);
 }
 
 #webHead {
@@ -79,7 +79,7 @@ body {
 }
   
 #buttons button { 
-    background:#4da6ff; 
+    background:#91c5f9; 
     border:none; 
     color:#fff; 
     cursor:pointer; 
@@ -92,15 +92,15 @@ body {
 }
   
 #buttons button#shortBreak{
-    background : #0c0;
+    background : rgb(127, 219, 127);
 }
   
 #buttons button#longBreak{
-    background : #080;
+    background : rgb(69, 152, 69);
 }
   
 #buttons button#stop{
-    background : #f00;
+    background : rgb(225, 77, 77);
 }
 
 .wrapper{
@@ -124,7 +124,7 @@ body {
     margin: 0 0 18px;
 }
 .search input{
-    height: 53px;
+    height: 6vh;
     width: 95%;
     outline: none;
     font-size: 1.3vw;
@@ -244,6 +244,7 @@ ul .word i{
 
 .taskformSection {
     border-radius :20px;
+    font-size: 1.1vw;
     width:17.5vw;
     margin:1vw auto;
     padding: 0.5vw 1.5vw;
@@ -276,6 +277,7 @@ ul .word i{
     width: 30%;
     background-color: tomato;
     color: white;
+    font-size: 1vw;
 }
 
 .rightPanel {
@@ -313,11 +315,6 @@ ul .word i{
     transform-origin: bottom;
 }
 
-.kanban {
-    height:80vh;
-    width:93vw;
-}
-
 .footer {
     background-color: black;
     display:block;
@@ -328,7 +325,12 @@ ul .word i{
     width: 100%;
 }
 
-.container {
+.kanban {
+    height:80vh;
+    width:93vw;
+}
+
+.kanbanContainer {
     width: 70%;
     min-width: 50%;
     margin: auto;
@@ -398,12 +400,13 @@ ul .word i{
     padding: 0.5rem 2.7rem;
     border-radius: 0.3rem;
     font-size: 1rem;
+    cursor: pointer;
   }
   
   .create-new-task-block {
     display: none;
     /* display: flex; */
-    background: #ffaf00;
+    background:rgb(252, 233, 88);
     width: 64.4%;
     flex-direction: column;
   }
