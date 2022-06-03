@@ -317,37 +317,22 @@ ul .content::-webkit-scrollbar {
 
 .rightPanel {
   float: right;
-  width: 6vw;
+  width: 8vw;
   height: 90vh;
 }
 
-.waterContainer {
-  height: 75vh;
-  width: 2.75vw;
+#counter {
+  font-size: 6vw;
+  line-height: 32vh;
   display: block;
   margin: 1.5vh auto;
   position: fixed;
-}
-
-.waterBar {
-  height: 75vh;
-  width: 2.75vw;
-  rx: 20px;
-  ry: 20px;
-  fill: whitesmoke;
-  opacity: 70%;
-}
-
-#water {
-  position: absolute;
   bottom: 0;
-  height: 60vh;
-  width: 2.75vw;
-  rx: 20px;
-  ry: 20px;
-  fill: lightskyblue;
+  text-align: right;
+  padding-right: 1vw;
+  color:lightseagreen;
   opacity: 80%;
-  transform-origin: bottom;
+  padding: 100px auto;
 }
 
 .footer {
